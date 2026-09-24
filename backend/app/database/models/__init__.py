@@ -7,6 +7,8 @@ from app.database.models.print_order import PrintOrder
 from app.database.models.print_option import PrintOption
 from app.database.models.print_job import PrintJob
 from app.database.models.pricing_rule import PricingRule
+from app.database.models.payment import Payment
+from app.database.models.payment_event import PaymentEvent
 
 __all__ = [
     "Admin",
