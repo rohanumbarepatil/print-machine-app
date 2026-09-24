@@ -6,7 +6,6 @@ from app.api.documents import router as documents_router
 from app.api.orders import router as orders_router
 from app.api.pricing import router as pricing_router
 
-
 api_router = APIRouter()
 
 
