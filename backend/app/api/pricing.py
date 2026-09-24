@@ -68,11 +68,11 @@ def create_pricing_rule(
 )
 def list_pricing_rules(
     db: Session = Depends(get_db),
-    current_admin: Admin = Depends(get_current_admin),
 ):
     return db.scalars(
         select(PricingRule).order_by(PricingRule.created_at.desc())
     ).all()
+
 from decimal import Decimal
 from uuid import UUID
 
@@ -92,7 +92,6 @@ from app.database.models.pricing_rule import PricingRule
 def calculate_order_price(
     order_id: UUID,
     db: Session = Depends(get_db),
-    current_admin: Admin = Depends(get_current_admin),
 ):
     order = db.scalar(
         select(PrintOrder).where(PrintOrder.id == order_id)
